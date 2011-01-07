@@ -1,0 +1,52 @@
+Big Integer library.
+
+Author: Witold Baryluk
+
+Public License
+
+Main objectives of this code:
+  - simple
+  - small
+  - portable
+  - free
+  - general non-cryptographic application (no security scrunity, or fixing any side-channel attacks)
+  - correct and well tested :)
+
+Currently some basic operations are suported:
+  - creation of small positive integers
+  - primitive operations on positive numbers:
+     - addition
+     - substraction (if result is positive)
+     - comprision for less,equal,greater and equality separetly
+     - multiplication, and squaring
+       * schoolbook column-based mupltiplication and Karatsub'a recursive method
+     - division and modulo
+       * schoolbook divison using binary shift with preshift
+       * preliminaru co-recursive divide&conqueror implementation
+       * preliminary Netwon's method for inversion + Berret's algorithm divmod
+         (usefull for very big divisor, or when performing repeatdly divmod using same divisor)
+     - modular multiplication, addition and exponentation
+  - gcd using Euclid's algorithm
+  - extended Euclid's algorithm
+  - computing multiplicative inverse in finite field mod p
+  - random number generator based on WELL512
+  - Miller-Rabin "primality" test
+  - big prime number generator
+  - simple memory managment
+  - low lewel operations, including cloning, slicing, offsets, fixing.
+  - printing in base 16 or base 10
+
+Notes: currently negative operations are not supported.
+
+TODO:
+  - reading numbers in base 2, 10, 16
+  - writing numbers in base 2
+  - additional offset to sub, add and mul
+  - eliminate not-needed allocations
+  - full unittesting and include my tests
+  - more asserts (including paranoic ones)
+  - translate some comments
+  - better documentation
+  - try moving from 16bit to 32bit digits
+  - modulator structure (for repeated powmod, mulmod, addmod with same n
+  - support primitive floating point operations (beyond add,sub,sqrt,div: sqrt, exp, log)
